@@ -1,16 +1,14 @@
-# This is a sample Python script.
+import threading
+import requests
+from lib.Parser import Parser
+from lib.Request import Request
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+url : str = 'https://www.karlancer.com/search?skillIds=1282,2915,1239,1369,2148'
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    request_object = Request( url , requests )
+    request = request_object.fetch_data()
+    parser = Parser( request.text )
+
+
