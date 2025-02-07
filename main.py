@@ -33,8 +33,9 @@ def start() -> { str : str } :
 
     if re.search( 'ثانیه' , release_time ) is not None :
         show_notification( data )
-        for key in data :
-            print( f'{key} + \n' )
+        for key in data:
+            print(f'{key} : {data[key]}')
+
             
 if __name__ == '__main__':
 
